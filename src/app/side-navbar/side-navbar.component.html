@@ -1,0 +1,33 @@
+<div class="sidenavbar-layout">
+  <mat-sidenav-container class="sidenav">
+    <mat-sidenav #sidenav  [opened]="true" mode="side">
+      
+      <mat-nav-list class="sidenavlist" id="nav">
+        <a mat-list-item routerLink="dashboard">
+            <mat-icon>dashboard</mat-icon>Dashboard
+        </a>
+        <a mat-list-item routerLink="inventory">
+            <mat-icon>inventory</mat-icon> Inventory
+        </a>
+        <a mat-list-item routerLink="orders">
+            <mat-icon>task</mat-icon>Orders
+        </a>
+        <a mat-list-item >
+            <mat-icon>supervised_user_circle</mat-icon> Customers
+        </a>
+        <a mat-list-item >
+            <mat-icon>report</mat-icon>Reports</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-icon
+        style="position: fixed"
+        matTooltip="Toggle menu"
+        (click)="sidenav.toggle()"
+        >menu_open</mat-icon>
+
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
